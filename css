@@ -1,0 +1,187 @@
+/* Existing CSS */
+.boxed-layout {
+    margin: 0 auto;
+    max-width: 1200px;
+    background-color: #ffffff; /* White background */
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .boxed-layout::before,
+  .boxed-layout::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(246, 6, 6, 0.8);
+  }
+  
+  .boxed-layout::before {
+    left: -20px;
+  }
+  
+  .boxed-layout::after {
+    right: -20px;
+  }
+
+
+/* Updated .rabbit-hole-container with increased height for black */
+.rabbit-hole-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(to bottom, black 0%, black 70%, #550000 85%, red 100%);  /* Increased black height */
+}
+
+
+#rabbitHolePage {
+    background-color: rgb(157, 11, 11);
+}
+
+.unique-body {
+    background-color: black;
+}
+
+.rabbit-hole-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: red;
+}
+
+.rabbit-hole-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('rabbitholes.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.99;
+    z-index: 0;
+}
+
+.rabbit-hole-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('dirt-graphics.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+#matrixCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Added CSS variables */
+/* Updated CSS variables */
+:root{
+    --color1: red;
+    --color2: blue;  /* Changed to blue */
+    --color3: #ff601c;
+    --color4: #e3e3e3;
+}
+
+/* New Button Styles */
+.btn2{
+    margin-top: -350px;
+    border: 0.15em solid var(--color2);
+    color: var(--color2);
+    text-shadow: 2px 2px 10px var(--color2),
+    -2px -2px 10px var(--color2);
+    box-shadow: 0 0 25px 3px var(--color2),
+    inset 0 0 15px 3px var(--color2);
+}
+.btn2::after{
+    background-color: var(--color2);  /* Changed to blue */
+}
+.btn2:hover{
+    background-color: var(--color2);
+    box-shadow: 0 0 50px 15px var(--color2);
+}
+
+.btn{
+    position: relative;
+    font-size: 24px;
+    padding: 1.5em 3em;  /* Increased vertical padding to increase height */
+    border-radius: 0.5em;
+    border: 0.15em solid var(--color1);
+    background-color: transparent;
+    color: var(--color1);
+    text-shadow: 2px 2px 10px var(--color1),
+    -2px -2px 10px var(--color1);
+    box-shadow: 0 0 25px 3px var(--color1),  /* Existing glow */
+    inset 0 0 15px 3px var(--color1);
+    
+}
+/* Increase glow on hover */
+.btn:hover {
+    background-color: var(--color1);
+    color: #111;
+    box-shadow: 0 0 50px 15px var(--color1);  /* Increased glow radius */
+}
+/* Button Reflection Color */
+.btn::after{
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color1);  /* Changed to blue */
+    transform: perspective(5em) rotateX(70deg);
+    filter: blur(20px);
+    opacity: 0.3;
+}
+.btn:hover::after{
+    opacity: 1;
+    background-color: var(--color1);  /* Changed to blue */
+    box-shadow: 0 0 20px 5px var(--color1);
+    
+}
+#matrixCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1; /* To keep it in the background */
+  }
+
+  .rabbit-button, .btn {
+    background-color: red;
+    color: white;  /* Text color set to white for better visibility */
+    border: 0.15em solid var(--color1);  /* Border color set to red */
+}
+
+.red-navbar .bottom-bar {
+    background-color: red;
+  }
+  .red-navbar .bottom-bar a:hover {
+    color: black;
+  }
